@@ -1,0 +1,239 @@
+<!-- bar.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bar – Local Eats</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome v4 -->
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <i class="fa fa-cutlery"></i>
+        <span>Local Eats</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-submenu">
+            <a href="services.html">Services <i class="fa fa-chevron-down"></i></a>
+            <ul class="submenu">
+              <li><a href="events.html">Events</a></li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="bar.html" class="active">Bar</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Tour Bookings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="services-hero" style="background:url('assets/images/bar-hero.jpg')center/cover no-repeat;">
+      <div class="container">
+        <h1>Our Signature Drinks</h1>
+        <p>Discover 20 of our most popular cocktails & beverages.</p>
+      </div>
+    </section>
+
+    <section class="search-bar container">
+      <form class="filter-form">
+        <div class="form-group">
+          <h3>Search drinks</h3>
+          <input type="text" id="drink-search" name="drink-search" placeholder="e.g. Margarita, Mojito...">
+        </div>
+      </form>
+      <p id="no-match" class="no-match" hidden>No matching drinks found.</p>
+    </section>
+
+    <div class="gallery container">
+      <div class="gallery-grid staff-grid">
+        <article class="drink-card" data-name="Margarita">
+          <!--the following images were downloaded from pinterest through their respective names-->
+          <img src="assets/images/margarita.png" alt="Margarita">
+          <h3>Margarita</h3>
+          <p>Offered by: The Greasy Spoon</p>
+          <p>Price: $12</p>
+        </article>
+        <article class="drink-card" data-name="Mojito">
+          <img src="assets/images/mojito.png" alt="Mojito">
+          <h3>Mojito</h3>
+          <p>Offered by: Vegan Delights</p>
+          <p>Price: $10</p>
+        </article>
+        <article class="drink-card" data-name="Old Fashioned">
+          <img src="assets/images/old-fashioned.png" alt="Old Fashioned">
+          <h3>Old Fashioned</h3>
+          <p>Offered by: Sushi Central</p>
+          <p>Price: $14</p>
+        </article>
+        <article class="drink-card" data-name="Martini">
+          <img src="assets/images/martini.png" alt="Martini">
+          <h3>Martini</h3>
+          <p>Offered by: Curry Corner</p>
+          <p>Price: $13</p>
+        </article>
+        <article class="drink-card" data-name="Daiquiri">
+          <img src="assets/images/daiquiri.png" alt="Daiquiri">
+          <h3>Daiquiri</h3>
+          <p>Offered by: The Greasy Spoon</p>
+          <p>Price: $11</p>
+        </article>
+        <article class="drink-card" data-name="Piña Colada">
+          <img src="assets/images/pina-colada.png" alt="Piña Colada">
+          <h3>Piña Colada</h3>
+          <p>Offered by: Vegan Delights</p>
+          <p>Price: $12</p>
+        </article>
+        <article class="drink-card" data-name="Negroni">
+          <img src="assets/images/negroni.png" alt="Negroni">
+          <h3>Negroni</h3>
+          <p>Offered by: Sushi Central</p>
+          <p>Price: $13</p>
+        </article>
+        <article class="drink-card" data-name="Manhattan">
+          <img src="assets/images/manhattan.png" alt="Manhattan">
+          <h3>Manhattan</h3>
+          <p>Offered by: Curry Corner</p>
+          <p>Price: $14</p>
+        </article>
+        <article class="drink-card" data-name="Whiskey Sour">
+          <img src="assets/images/whiskey-sour.png" alt="Whiskey Sour">
+          <h3>Whiskey Sour</h3>
+          <p>Offered by: The Greasy Spoon</p>
+          <p>Price: $12</p>
+        </article>
+        <article class="drink-card" data-name="Cosmopolitan">
+          <img src="assets/images/cosmopolitan.png" alt="Cosmopolitan">
+          <h3>Cosmopolitan</h3>
+          <p>Offered by: Vegan Delights</p>
+          <p>Price: $11</p>
+        </article>
+        <article class="drink-card" data-name="Tequila Sunrise">
+          <img src="assets/images/tequila-sunrise.png" alt="Tequila Sunrise">
+          <h3>Tequila Sunrise</h3>
+          <p>Offered by: Sushi Central</p>
+          <p>Price: $13</p>
+        </article>
+        <article class="drink-card" data-name="Long Island Iced Tea">
+          <img src="assets/images/long-island.png" alt="Long Island Iced Tea">
+          <h3>Long Island Iced Tea</h3>
+          <p>Offered by: Curry Corner</p>
+          <p>Price: $15</p>
+        </article>
+        <article class="drink-card" data-name="Moscow Mule">
+          <img src="assets/images/moscow-mule.png" alt="Moscow Mule">
+          <h3>Moscow Mule</h3>
+          <p>Offered by: The Greasy Spoon</p>
+          <p>Price: $12</p>
+        </article>
+        <article class="drink-card" data-name="Sangria">
+          <img src="assets/images/sangria.png" alt="Sangria">
+          <h3>Sangria</h3>
+          <p>Offered by: Vegan Delights</p>
+          <p>Price: $10</p>
+        </article>
+        <article class="drink-card" data-name="Bellini">
+          <img src="assets/images/bellini.png" alt="Bellini">
+          <h3>Bellini</h3>
+          <p>Offered by: Sushi Central</p>
+          <p>Price: $11</p>
+        </article>
+        <article class="drink-card" data-name="Aperol Spritz">
+          <img src="assets/images/aperol-spritz.png" alt="Aperol Spritz">
+          <h3>Aperol Spritz</h3>
+          <p>Offered by: Curry Corner</p>
+          <p>Price: $12</p>
+        </article>
+        <article class="drink-card" data-name="Mint Julep">
+          <img src="assets/images/mint-julep.png" alt="Mint Julep">
+          <h3>Mint Julep</h3>
+          <p>Offered by: The Greasy Spoon</p>
+          <p>Price: $13</p>
+        </article>
+        <article class="drink-card" data-name="Paloma">
+          <img src="assets/images/paloma.png" alt="Paloma">
+          <h3>Paloma</h3>
+          <p>Offered by: Vegan Delights</p>
+          <p>Price: $11</p>
+        </article>
+        <article class="drink-card" data-name="Sidecar">
+          <img src="assets/images/sidecar.png" alt="Sidecar">
+          <h3>Sidecar</h3>
+          <p>Offered by: Sushi Central</p>
+          <p>Price: $14</p>
+        </article>
+        <article class="drink-card" data-name="Irish Coffee">
+          <img src="assets/images/irish-coffee.png" alt="Irish Coffee">
+          <h3>Irish Coffee</h3>
+          <p>Offered by: Curry Corner</p>
+          <p>Price: $10</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Local Eats. All rights reserved.</p>
+      <div class="social">
+        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+      <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+          <img src="assets/images/htmlval.png" alt="Valid HTML5 and CSS" width="150" height="50">
+        </a>
+      </p>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.site-nav > ul')
+        .classList.toggle('nav-open');
+    });
+
+    const searchInput = document.getElementById('drink-search');
+    const noMatchEl = document.getElementById('no-match');
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      let anyVisible = false;
+      document.querySelectorAll('.drink-card').forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        if (q === '' || name.includes(q)) {
+          card.style.display = '';
+          anyVisible = true;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      noMatchEl.hidden = anyVisible || q === '';
+    });
+  </script>
+</body>
+</html>

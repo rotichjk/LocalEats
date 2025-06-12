@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sports – Local Eats</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome v4 -->
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <i class="fa fa-cutlery"></i>
+        <span>Local Eats</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-submenu">
+            <a href="services.html" class="active">
+              Services <i class="fa fa-chevron-down"></i>
+            </a>
+            <ul class="submenu">
+              <li><a href="events.html">Events</a></li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="sports.html" class="active">Sports</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="bar.html">Bar</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Tour Bookings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="services-hero"
+             style="background: url('assets/images/sports-hero.jpg') center/cover no-repeat;">
+      <div class="container">
+        <h1>Game Day Eats</h1>
+        <p>Grab the perfect snacks and refreshments at local matches and tournaments.</p>
+      </div>
+    </section>
+
+    <div class="services-grid container">
+      <article class="service-card">
+        <i class="fa fa-beer fa-3x"></i>
+        <h3>Stadium Brews</h3>
+        <p>Cold craft beers and local ales to keep the cheers going.</p>
+        <p><strong>All Home Games • The Beer Bar</strong></p>
+      </article>
+
+      <article class="service-card">
+        <i class="fa fa-cutlery fa-3x"></i>
+        <h3>Half-Time Bites</h3>
+        <p>Quick-serve wraps, sliders, and shareable platters for hungry fans.</p>
+        <p><strong>All Matches • Curry Corner</strong></p>
+      </article>
+
+      <article class="service-card">
+        <i class="fa fa-apple fa-3x"></i>
+        <h3>Healthy Snacks</h3>
+        <p>Fresh fruit cups, smoothies, and energy bars for the health-conscious.</p>
+        <p><strong>Select Games • Vegan Delights</strong></p>
+      </article>
+    </div>
+
+    <section class="cta container">
+      <h2>Partner Your Game Day</h2>
+      <a href="contact.html" class="btn">Become a Vendor</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Local Eats. All rights reserved.</p>
+      <div class="social">
+        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+      <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+          <img src="assets/images/htmlval.png" alt="Valid HTML5 and CSS" width="150" height="50">
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.site-nav > ul').classList.toggle('nav-open');
+    });
+  </script>
+</body>
+</html>

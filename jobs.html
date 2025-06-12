@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Jobs – Local Eats</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome v4 -->
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <!-- HEADER + NAV -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <i class="fa fa-cutlery"></i>
+        <span>Local Eats</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-submenu">
+            <a href="services.html">Services <i class="fa fa-chevron-down"></i></a>
+            <ul class="submenu">
+              <li><a href="events.html">Events</a></li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="jobs.html" class="active">Jobs</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="bar.html">Bar</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Tour Bookings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="services-hero"
+             style="background:url('assets/images/jobs-hero.jpg')center/cover no-repeat;">
+      <div class="container">
+        <h1>Career Opportunities</h1>
+        <p>Find your next role in hospitality, management, and culinary arts.</p>
+      </div>
+    </section>
+
+    <div class="search-bar container">
+      <form class="filter-form">
+        <div class="form-group">
+          <label for="job-search">Search Positions</label>
+          <input
+            type="text"
+            id="job-search"
+            name="job-search"
+            placeholder="e.g. Chef, Manager, Coordinator..."
+          >
+        </div>
+      </form>
+    </div>
+    <p id="no-match" class="no-match" hidden>No matching jobs found.</p>
+
+    <section class="gallery container">
+      <div class="gallery-grid">
+        <div class="job-vendor-item" data-vendor="The Greasy Spoon">
+          <h3 class="vendor-title">The Greasy Spoon</h3>
+          <ul class="positions-list">
+            <li>
+              <span>Head Chef</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+            <li>
+              <span>Restaurant Manager</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+            <li>
+              <span>Line Cook</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="job-vendor-item" data-vendor="Vegan Delights">
+          <h3 class="vendor-title">Vegan Delights</h3>
+          <ul class="positions-list">
+            <li>
+              <span>Sous Chef</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+            <li>
+              <span>Front Desk Coordinator</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+            <li>
+              <span>Barista</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="job-vendor-item" data-vendor="Sushi Central">
+          <h3 class="vendor-title">Sushi Central</h3>
+          <ul class="positions-list">
+            <li>
+              <span>Sushi Chef</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+            <li>
+              <span>Kitchen Manager</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+            <li>
+              <span>Server</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="job-vendor-item" data-vendor="Curry Corner">
+          <h3 class="vendor-title">Curry Corner</h3>
+          <ul class="positions-list">
+            <li>
+              <span>Restaurant Supervisor</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+            <li>
+              <span>Prep Cook</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+            <li>
+              <span>Host/Hostess</span>
+              <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Local Eats. All rights reserved.</p>
+      <div class="social">
+        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+    <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+          <img src="assets/images/htmlval.png" alt="Valid HTML5 and CSS" width="150" height="50">
+        </a>
+      </p>
+  </footer>
+  
+  <script>
+  document.querySelector('.nav-toggle').addEventListener('click', () => {
+    document.querySelector('.site-nav > ul')
+            .classList.toggle('nav-open');
+  });
+
+  // Vendor list toggle on title click (unchanged)
+  document.querySelectorAll('.vendor-title').forEach(title => {
+    title.addEventListener('click', () => {
+      title.nextElementSibling.classList.toggle('open');
+    });
+  });
+  const searchInput = document.getElementById('job-search');
+  const noMatchEl   = document.getElementById('no-match');
+
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    let anyVisible = false;
+
+    document.querySelectorAll('.job-vendor-item').forEach(item => {
+      const vendorName = item.dataset.vendor.toLowerCase();
+      const listEl     = item.querySelector('.positions-list');
+      const positions  = Array.from(listEl.querySelectorAll('li'));
+
+      const matchesVendor = vendorName.includes(q);
+      const matchesJob    = positions.some(li =>
+        li.textContent.toLowerCase().includes(q)
+      );
+
+      if (q === "") {
+        item.style.display = "";
+        listEl.classList.remove('open');
+      } else if (matchesVendor || matchesJob) {
+        item.style.display = "";
+        listEl.classList.add('open');
+        anyVisible = true;
+      } else {
+        item.style.display = "none";
+        listEl.classList.remove('open');
+      }
+    });
+
+    if (q !== "" && !anyVisible) {
+      noMatchEl.hidden = false;
+    } else {
+      noMatchEl.hidden = true;
+    }
+  });
+</script>
+</body>
+</html>

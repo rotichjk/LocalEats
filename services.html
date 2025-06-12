@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Services – Local Eats</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome v4 -->
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <!-- HEADER + NAV -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <i class="fa fa-cutlery"></i>
+        <span>Local Eats</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-submenu">
+            <a href="services.html" class="active">
+              Services <i class="fa fa-chevron-down"></i>
+            </a>
+            <ul class="submenu">
+              <li><a href="events.html">Events</a></li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="bar.html">Bar</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Tour Bookings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="services-hero" style="background: url('assets/images/services-hero.jpg') center/cover no-repeat;">
+      <div class="container">
+        <h1>Our Services</h1>
+        <p>Bringing the community together through unforgettable food events, exciting culinary games, and match-day eats.</p>
+      </div>
+    </section>
+
+    <div class="services-grid container">
+      <article class="service-card">
+        <i class="fa fa-fire fa-3x"></i>
+        <h3>Food Events</h3>
+        <p>Experience pop-up dinners, street markets, and chef’s table tastings that celebrate local flavors.</p>
+        <a href="events.html" class="btn">Explore Events</a>
+      </article>
+
+      <article class="service-card">
+        <i class="fa fa-gamepad fa-3x"></i>
+        <h3>Culinary Games</h3>
+        <p>Join trivia nights, cook-offs, and bake-offs to test your foodie skills and win prizes.</p>
+        <a href="games.html" class="btn">Play Games</a>
+      </article>
+
+      <article class="service-card">
+        <i class="fa fa-futbol-o fa-3x"></i>
+        <h3>Game Day Eats</h3>
+        <p>Fuel your match-day spirit with curated snacks, craft brews, and halftime bites from top vendors.</p>
+        <a href="sports.html" class="btn">View Sports</a>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Local Eats. All rights reserved.</p>
+      <div class="social">
+        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+    <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+          <img src="assets/images/htmlval.png" alt="Valid HTML5 and CSS" width="150" height="50">
+        </a>
+      </p>
+  </footer>
+
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.site-nav > ul').classList.toggle('nav-open');
+    });
+  </script>
+</body>
+</html>

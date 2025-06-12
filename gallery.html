@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gallery – Local Eats</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome v4 -->
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><i class="fa fa-cutlery"></i>Local Eats</a>
+      <button class="nav-toggle" aria-label="Toggle menu"><i class="fa fa-bars"></i></button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-submenu">
+            <a href="services.html">Services <i class="fa fa-chevron-down"></i></a>
+            <ul class="submenu">
+              <li><a href="events.html">Events</a></li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="bar.html">Bar</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Tour Bookings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="gallery-hero" style="background:url('assets/images/gallery-hero.jpg') center/cover no-repeat;">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p>Browse our vendors’ best moments and dishes.</p>
+      </div>
+    </section>
+
+    <div class="gallery-filters container">
+      <select id="vendor-filter">
+        <option value="all">All Vendors</option>
+        <option value="greasy-spoon">The Greasy Spoon</option>
+        <option value="vegan-delights">Vegan Delights</option>
+        <option value="sushi-central">Sushi Central</option>
+        <option value="curry-corner">Curry Corner</option>
+      </select>
+      <input id="gallery-search" type="search" placeholder="Search dishes…(e.g Salads)">
+      <p id="no-match" class="no-match" hidden>No matching images found.</p>
+    </div>
+    <!-- the following images were downloaded from pinterest through their respective title names-->
+    <section class="gallery-masonry container">
+      <div id="gallery-grid">
+        <div class="gallery-item" data-vendor="greasy-spoon" data-name="All-day Pancakes">
+          <img src="assets/images/spoon-dish1.png" alt="All-day Pancakes">
+          <div class="overlay">
+            <h3>All-day Pancakes</h3>
+            <p>The Greasy Spoon</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-vendor="vegan-delights" data-name="Rainbow Salad">
+          <img src="assets/images/veg-dish1.png" alt="Rainbow Salad">
+          <div class="overlay">
+            <h3>Rainbow Salad</h3>
+            <p>Vegan Delights</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-vendor="sushi-central" data-name="Salmon Nigiri">
+          <img src="assets/images/sushi-dish1.png" alt="Salmon Nigiri">
+          <div class="overlay">
+            <h3>Salmon Nigiri</h3>
+            <p>Sushi Central</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-vendor="curry-corner" data-name="Green Curry">
+          <img src="assets/images/curry-dish1.png" alt="Green Curry">
+          <div class="overlay">
+            <h3>Green Curry</h3>
+            <p>Curry Corner</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="lightbox" class="lightbox hidden">
+      <button class="close"><i class="fa fa-times"></i></button>
+      <button class="prev"><i class="fa fa-chevron-left"></i></button>
+      <img src="" alt="">
+      <div class="caption">
+        <h3>G</h3>
+        <p></p>
+      </div>
+      <button class="next"><i class="fa fa-chevron-right"></i></button>
+      <a class="btn view-vendor" href="#">View Vendor</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Local Eats. All rights reserved.</p>
+      <div class="social">
+        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+    <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+          <img src="assets/images/htmlval.png" alt="Valid HTML5 and CSS" width="150" height="50">
+        </a>
+      </p>
+  </footer>
+
+  <script>
+    // Nav toggle
+    document.querySelector('.nav-toggle').onclick = () =>
+      document.querySelector('.site-nav > ul').classList.toggle('nav-open');
+
+    const items    = Array.from(document.querySelectorAll('.gallery-item'));
+    const select   = document.getElementById('vendor-filter');
+    const search   = document.getElementById('gallery-search');
+    const noMatch  = document.getElementById('no-match');
+
+    function filterGrid() {
+      const fv = select.value;
+      const q  = search.value.trim().toLowerCase();
+      let any = false;
+      items.forEach(el => {
+        const name   = el.dataset.name.toLowerCase();
+        const vend   = el.dataset.vendor;
+        const show   = (fv==='all' || fv===vend) && name.includes(q);
+        el.style.display = show ? '' : 'none';
+        if (show) any = true;
+      });
+      noMatch.hidden = any || q==='';
+    }
+    select.onchange = filterGrid;
+    search.oninput = filterGrid;
+
+    const lb       = document.getElementById('lightbox');
+    const lbImg    = lb.querySelector('img');
+    const lbTitle  = lb.querySelector('.caption h3');
+    const lbSub    = lb.querySelector('.caption p');
+    const lbView   = lb.querySelector('.view-vendor');
+    let currentIdx = -1;
+
+    function openLightbox(idx) {
+  const el = items[idx];
+  lbImg.src   = el.querySelector('img').src;
+  lbTitle.textContent = el.dataset.name;
+  lbSub.textContent   = el.dataset.vendor.replace(/-/g,' ');
+  lbView.href = `about.html?restaurant=${el.dataset.vendor}`;
+  lb.classList.remove('hidden');
+  currentIdx = idx;
+}
+
+    items.forEach((el,i) =>
+      el.onclick = () => openLightbox(i)
+    );
+
+    lb.querySelector('.close').onclick = () => lb.classList.add('hidden');
+    lb.querySelector('.prev').onclick  = () => {
+      currentIdx = (currentIdx-1+items.length)%items.length;
+      openLightbox(currentIdx);
+    };
+    lb.querySelector('.next').onclick  = () => {
+      currentIdx = (currentIdx+1)%items.length;
+      openLightbox(currentIdx);
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact Us – Local Eats</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome v4 -->
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <i class="fa fa-cutlery"></i>
+        Local Eats
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-submenu">
+            <a href="services.html">Services <i class="fa fa-chevron-down"></i></a>
+            <ul class="submenu">
+              <li><a href="events.html">Events</a></li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="bar.html">Bar</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Tour Bookings</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="services-hero" style="background:url('assets/images/contact-hero.jpg') center/cover no-repeat;">
+      <div class="container">
+        <h1>Get in Touch</h1>
+        <p>Questions, bookings, feedback—let’s connect!</p>
+      </div>
+    </section>
+
+    <section class="container contact-grid">
+      <div class="contact-details">
+        <h2>Contact Information</h2>
+        <p><i class="fa fa-map-marker"></i> 123 Flavor Street, Foodie City</p>
+        <p><i class="fa fa-phone"></i> +1 (555) 123-4567</p>
+        <p><i class="fa fa-envelope"></i> info@localeats.com</p>
+        <p><i class="fa fa-clock-o"></i> Mon–Fri: 9am–6pm</p>
+        <div class="contact-social">
+          <a href="#"><i class="fa fa-facebook-f"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <!--the following location preview was embeded from google maps, location - melbourne-->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93392.3710178536!2d144.9312584398101!3d-37.809560536875296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2ske!4v1748554595480!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+      <div id="message-us" class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel">
+          </div>
+          <div class="form-group">
+            <label for="inquiry">Inquiry Type</label>
+            <select id="inquiry">
+              <option>General</option>
+              <option>Booking</option>
+              <option>Job Inquiry</option>
+              <option>Press</option>
+              <option>Feedback</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" required></textarea>
+          </div>
+          <button id="submit" type="submit" class="btn" onclick= "sent()">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="container alt-contact">
+      <p>Prefer email? <a href="mailto:info@localeats.com">info@localeats.com</a></p>
+      <p>Follow us on social media above for updates and news!</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Local Eats. All rights reserved.</p>
+      <div class="social">
+        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+    <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+          <img src="assets/images/htmlval.png" alt="Valid HTML5 and CSS" width="150" height="50">
+        </a>
+      </p>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.site-nav > ul').classList.toggle('nav-open');
+    });
+      
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      form.innerHTML = '<p>Thank you for contacting us!. One of our agents will get back to you shortly.</p>';
+    });
+function sent(){
+    window.confirm("Message sent successfully!");
+}
+  </script>
+</body>
+</html>

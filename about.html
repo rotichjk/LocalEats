@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About Us – Local Eats</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome v4 -->
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <i class="fa fa-cutlery"></i>
+        <span>Local Eats</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li class="has-submenu">
+            <a href="services.html">Services <i class="fa fa-chevron-down"></i></a>
+            <ul class="submenu">
+              <li><a href="events.html">Events</a></li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="bar.html">Bar</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Tour Bookings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="container">
+        <h1>About Local Eats</h1>
+        <p>Connecting food lovers with the best local spots since 2024.</p>
+      </div>
+    </section>
+    <section class="our-story container">
+        <h2>Our Story</h2>
+        <p>Local Eats began in 2024 when a group of food enthusiasts 
+          set out to shine a spotlight on the vibrant local dining scene. 
+          Starting as a simple online directory, it blossomed into a thriving 
+          community where diners share honest reviews, mouthwatering photos, 
+          and insider tips. Today, Local Eats celebrates neighborhood flavors and 
+          fosters connections between passionate chefs and food lovers.</p>
+      </section>
+
+    <section id="vendor-hero" class="vendor-hero" hidden>
+      <div class="container">
+        <h1 id="rest-name">h</h1>
+        <p id="rest-description"></p>
+      </div>
+    </section>
+
+    <div id="vendor-overview" class="vendor-overview container" hidden>
+      <div class="overview-grid">
+        <div class="details">
+          <ul>
+            <li><strong>Address:</strong> <span id="rest-address"></span></li>
+            <li><strong>Hours:</strong>   <span id="rest-hours"></span></li>
+            <li><strong>Cuisine:</strong> <span id="rest-cuisine"></span></li>
+          </ul>
+        </div>
+        <div id="rest-gallery" class="gallery-grid"></div>
+      </div>
+    </div>
+
+    <section id="vendor-booking" class="vendor-booking container" hidden>
+      <button id="booking-toggle" class="btn booking-btn">Book Now</button>
+      <form id="booking-form" class="booking-form" hidden>
+        <h2>Reserve a Table</h2>
+        <div class="form-group">
+          <label for="book-name">Your Name</label>
+          <input type="text" id="book-name" name="book-name" required>
+        </div>
+        <div class="form-group">
+          <label for="book-email">Email</label>
+          <input type="email" id="book-email" name="book-email" required>
+        </div>
+        <div class="form-group">
+          <label for="book-date">Date</label>
+          <input type="date" id="book-date" name="book-date" required>
+        </div>
+        <div class="form-group">
+          <label for="book-time">Time</label>
+          <input type="time" id="book-time" name="book-time" required>
+        </div>
+        <div class="form-group">
+          <label for="book-guests">Guests</label>
+          <input type="number" id="book-guests" name="book-guests" min="1" max="20" required>
+        </div>
+        <button type="submit" class="btn">Submit Reservation</button>
+      </form>
+    </section>
+
+    <section id="vendor-menu" class="vendor-menu container" hidden>
+      <h2>Menu Highlights</h2>
+      <ul id="rest-menu" class="menu-list"></ul>
+    </section>
+
+    <section id="vendor-reviews" class="vendor-reviews container" hidden>
+      <h2>User Reviews</h2>
+      <div id="rest-reviews" class="review-list"></div>
+      <h3>Leave a Review</h3>
+      <form id="review-form">
+        <div class="form-group">
+          <label for="reviewer">Name</label>
+          <input id="reviewer" name="reviewer" required>
+        </div>
+        <div class="form-group">
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating" required>
+            <option value="">–</option>
+            <option>★★★★★</option>
+            <option>★★★★☆</option>
+            <option>★★★☆☆</option>
+            <option>★★☆☆☆</option>
+            <option>★☆☆☆☆</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="comment">Comment</label>
+          <textarea id="comment" name="comment" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit Review</button>
+      </form>
+    </section>
+
+    <div id="generic-content">
+      <section class="mission container">
+        <h2>Our Mission &amp; Values</h2>
+        <div class="values-grid">
+          <div class="value">
+            <i class="fa fa-heart"></i>
+            <h3>Community First</h3>
+            <p>We amplify local voices and flavors.</p>
+          </div>
+          <div class="value">
+            <i class="fa fa-leaf"></i>
+            <h3>Quality</h3>
+            <p>Every listing is vetted for excellence.</p>
+          </div>
+          <div class="value">
+            <i class="fa fa-globe"></i>
+            <h3>Inclusivity</h3>
+            <p>All dietary needs and budgets welcome.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="team container">
+        <h2>Meet the Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <!--these images were downloaded from these user's instagram accounts-->
+            <img src="assets/images/team1.jpg" alt="Alice" class="avatar">
+            <h3>Alice N.</h3>
+            <p>Founder &amp; CEO</p>
+          </div>
+          <div class="team-member">
+            <img src="assets/images/team2.jpg" alt="Ben" class="avatar">
+            <h3>Ben K.</h3>
+            <p>Head of Partnerships</p>
+          </div>
+          <div class="team-member">
+            <img src="assets/images/team3.jpg" alt="Cara" class="avatar">
+            <h3>Cara L.</h3>
+            <p>Lead Developer</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta container">
+        <h2>Ready to Get Involved?</h2>
+        <a href="contact.html" class="btn">Contact Us</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Local Eats. All rights reserved.</p>
+      <div class="social">
+        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+    <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+          <img src="assets/images/htmlval.png" alt="Valid HTML5 and CSS" width="150" height="50">
+        </a>
+      </p>
+  </footer>
+
+   <script>
+    // Nav toggle
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.site-nav > ul').classList.toggle('nav-open');
+    });
+
+    // Restaurant data
+    const restaurants = {
+      "the-greasy-spoon": {
+        name: "The Greasy Spoon",
+        description: "Your fix of British Fry-ups & More",
+        address: "Kinkerstraat 24, Amsterdam",
+        hours: "Thur - Sun 9 am – 5 pm ",
+        cuisine: "British",
+        //these images were downloaded from these restaurant's account posts( the greasy spoon,
+        //  vegan delights,sushi central and curry corner restaurant )
+        images: ["spoon2.jpg","spoon3.jpg","spoon4.jpg","spoon5.jpg","spoon6.jpg"],
+        menu: ["Full English","Irish Fry","Scottish","Vegan", "Classic Scran","SPAM","Halloumi"],
+        reviews: [
+          { reviewer:"Gershon M.", rating:"★★★★★", comment:"Best diner in town!" },
+          { reviewer:"Jairus R.", rating:"★★★★☆", comment:"Loved the pancakes." }
+        ]
+      },
+      "vegan-delights": {
+        name: "Vegan Delights",
+        description: "Plant-based comfort food that even carnivores love.",
+        address: "456 Oak Ave",
+        hours: "11 am – 9 pm Tue–Sun",
+        cuisine: "Vegan",
+        images: ["veg2.png","veg3.png","veg4.png","veg5.png"],
+        menu: ["Vegan Burger","Quinoa Salad","Cashew Cheese Pizza","Chickpea Curry"],
+        reviews: [
+          { reviewer:"Jamie P.", rating:"★★★★★", comment:"Incredible flavors!" },
+          { reviewer:"Alex F.",  rating:"★★★★☆", comment:"Great burger, fries soggy." }
+        ]
+      },
+      "sushi-central": {
+        name: "Sushi Central",
+        description: "Your go-to spot for fresh sushi rolls and sashimi bowls.",
+        address: "789 Harbor Rd",
+        hours: "12 pm – 10 pm daily",
+        cuisine: "Japanese",
+        images: ["sushi2.png","sushi3.png","sushi4.png","sushi5.png"],
+        menu: ["California Roll","Salmon Sashimi","Dragon Roll","Unagi Nigiri"],
+        reviews: [
+          { reviewer:"Sophie L.", rating:"★★★★★", comment:"Absolutely the best sushi!" },
+          { reviewer:"Mark T.",    rating:"★★★★☆", comment:"Fresh fish but pricey." }
+        ]
+      },
+      "curry-corner": {
+        name: "Curry Corner",
+        description: "Authentic Indian & Thai curries with freshly baked naan.",
+        address: "101 Spice Blvd",
+        hours: "11 am – 11 pm daily",
+        cuisine: "Indian & Thai",
+        images: ["curry2.png","curry3.png","curry4.png","curry5.png"],
+        menu: ["Chicken Tikka Masala","Green Curry","Veggie Samosa","Naan Basket"],
+        reviews: [
+          { reviewer:"Nina S.", rating:"★★★★★", comment:"Best curry in town!" },
+          { reviewer:"David K.", rating:"★★★★☆", comment:"Spicy, friendly staff." }
+        ]
+      }
+    };
+
+    const slug        = new URLSearchParams(location.search).get("restaurant"),
+          hero        = document.getElementById("vendor-hero"),
+          overview    = document.getElementById("vendor-overview"),
+          bookingSec  = document.getElementById("vendor-booking"),
+          menuSec     = document.getElementById("vendor-menu"),
+          reviewsSec  = document.getElementById("vendor-reviews"),
+          genericWrap = document.getElementById("generic-content");
+
+    if (slug && restaurants[slug]) {
+      genericWrap.hidden = true;
+      hero.hidden       = false;
+      overview.hidden   = false;
+      bookingSec.hidden = false;
+      menuSec.hidden    = false;
+      reviewsSec.hidden = false;
+
+      const info = restaurants[slug];
+
+      // Hero
+      document.getElementById("rest-name").textContent        = info.name;
+      document.getElementById("rest-description").textContent = info.description;
+
+      // Overview
+      document.getElementById("rest-address").textContent = info.address;
+      document.getElementById("rest-hours").textContent   = info.hours;
+      document.getElementById("rest-cuisine").textContent = info.cuisine;
+      const gallery = document.getElementById("rest-gallery");
+      info.images.forEach(src => {
+        const img = document.createElement("img");
+        img.src = `assets/images/${src}`;
+        img.alt = info.name;
+        gallery.appendChild(img);
+      });
+
+      // Booking toggle
+      const bookingToggle = document.getElementById("booking-toggle"),
+            bookingForm   = document.getElementById("booking-form");
+      bookingToggle.addEventListener("click", () => {
+        const isHidden = bookingForm.hasAttribute("hidden");
+        if (isHidden) {
+          bookingForm.removeAttribute("hidden");
+          bookingToggle.textContent = "Close Reservation";
+        } else {
+          bookingForm.setAttribute("hidden", "");
+          bookingToggle.textContent = "Book Now";
+        }
+      });
+      bookingForm.addEventListener("submit", e => {
+        e.preventDefault();
+        alert("Thank you! Your reservation request has been sent.");
+        bookingForm.reset();
+        bookingForm.setAttribute("hidden", "");
+        bookingToggle.textContent = "Book Now";
+      });
+
+      // Menu
+      const menuList = document.getElementById("rest-menu");
+      info.menu.forEach(dish => {
+        const li = document.createElement("li");
+        li.textContent = dish;
+        menuList.appendChild(li);
+      });
+
+      // Reviews
+
+      const reviewList = document.getElementById("rest-reviews");
+      info.reviews.forEach(r => {
+        const card = document.createElement("div");
+        card.className = "review-card";
+        card.innerHTML = `
+          <p class="reviewer">${r.reviewer}</p>
+          <p class="rating">${r.rating}</p>
+          <p class="comment">${r.comment}</p>`;
+        reviewList.appendChild(card);
+      });
+    const reviewForm = document.getElementById("review-form");
+    reviewForm.addEventListener("submit", e => {
+      e.preventDefault();  // stops the page reload
+      // Grab values
+      const name    = e.target.reviewer.value,
+            rating  = e.target.rating.value,
+            comment = e.target.comment.value;
+      // Build and prepend card
+      const card = document.createElement("div");
+      card.className = "review-card new";
+      card.innerHTML = `
+        <p class="reviewer">${name}</p>
+        <p class="rating">${rating}</p>
+        <p class="comment">${comment}</p>`;
+      reviewList.prepend(card);
+      window.confirm("Review submitted Successfully")
+      e.target.reset();
+    });
+
+    } else {
+      hero.hidden       = true;
+      overview.hidden   = true;
+      bookingSec.hidden = true;
+      menuSec.hidden    = true;
+      reviewsSec.hidden = true;
+      genericWrap.hidden= false;
+    }
+  </script>
+</body>
+</html>

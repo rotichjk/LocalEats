@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>References – Local Eats</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><i class="fa fa-cutlery"></i>Local Eats</a>
+      <button class="nav-toggle" aria-label="Toggle menu"><i class="fa fa-bars"></i></button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-submenu">
+            <a href="services.html">Services <i class="fa fa-chevron-down"></i></a>
+            <ul class="submenu">
+              <li><a href="events.html">Events</a></li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="bar.html">Bar</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Tour Bookings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html" class="active">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container" id="references">
+      <h1>References</h1>
+
+      <h2>Fonts &amp; Icons</h2>
+      <ul>
+        <li><strong>Google Fonts</strong>: <em>Open Sans</em>, <em>Poppins</em> — <a href="https://fonts.googleapis.com" target="_blank">fonts.googleapis.com</a></li>
+        <li><strong>Font Awesome v4</strong> — <a href="https://fontawesome.com/v4.7.0" target="_blank">https://fontawesome.com</a></li>
+      </ul>
+
+      <h2>Scripts &amp; Embeds</h2>
+      <ul>
+        <li><strong>Google Maps</strong> — Google Maps embed</li>
+      </ul>
+
+      <h2>Images</h2>
+
+      <h3>Hero &amp; Banner Images</h3>
+      <ul>
+        <li><em>about-hero.jpg</em> — Instagram</li>
+        <li><em>gallery-hero.jpg</em> — Instagram</li>
+        <li><em>booking-hero.jpg</em> — Instagram</li>
+        <li><em>menu-hero.jpg</em> — Instagram</li>
+        <li><em>staff-hero.jpg</em> — Instagram</li>
+        <li><em>contact-hero.jpg</em> — Instagram</li>
+      </ul>
+
+      <h3>Vendor &amp; Product Images</h3>
+      <ul>
+        <li><em>spoon1.png, spoon2.png, … spoon5.png</em> — The Greasy Spoon images (Instagram)</li>
+        <li><em>veg1.png, veg2.png, … veg5.png</em> — Vegan Delights images (Instagram)</li>
+        <li><em>sushi1.jpeg, sushi2.jpeg, … sushi5.jpeg</em> — Sushi Central images (Instagram)</li>
+        <li><em>curry1.png, curry2.png, … curry5.png</em> — Curry Corner images (Instagram)</li>
+        <li><em>margarita.jpg, mojito.jpg, … irish-coffee.jpg</em> — Bar drink images (Pinterest)</li>
+        <li><em>menu-bruschetta.jpg</em> — Bruschetta images(Pinterest)</li>
+        <li><em>menu-salmon.jpg</em> — Salmon images(Pinterest) </li>
+        <li><em>menu-lava-cake.jpg</em> — Lava cake images(Pinterest)</li>
+        <li><em>menu-truffle-fries.jpg</em> — Truffle fries images(Pinterest) </li>
+        <li><em>tour-chefs-table.jpg, tour-breakfast-crawl.jpg, … tour-fusion-tasting.jpg</em> — (Pinterest Images)</li>
+      </ul>
+
+      <h3>Team &amp; Avatar Photos</h3>
+      <ul>
+        <li><em>team1.jpg, team2.jpg, team3.jpg</em> — Instagram(respetive account names)</li>
+        <li><em>user1.jpg, user2.jpg, user3.jpg</em> — Instagram(respetive account names)</li>
+        <li><em>staff-gs-1.jpg, … staff-cc-4.jpg</em> — Instagram(respetive account names)</li>
+      </ul>
+
+      <h2>Content &amp; Copy</h2>
+      <ul>
+        <li><strong>“Our Story” text</strong> — written by project team</li>
+        <li><strong>Vendor descriptions, tour descriptions, menu descriptions</strong> — written by project team</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Local Eats. All rights reserved.</p>
+      <div class="social">
+        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+    <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+          <img src="assets/images/htmlval.png" alt="Valid HTML5 and CSS" width="150" height="50">
+        </a>
+      </p>
+  </footer>
+  
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.site-nav > ul').classList.toggle('nav-open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Local Eats – Home</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome v4 -->
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+
+  <style>
+    /* Inline additions for search & toggle layout */
+    .search-container {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .vendor-search-input {
+      flex: 1;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+    }
+    #toggle-filters {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      background: #f5f5f5;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #toggle-filters:hover {
+      background: #e0e0e0;
+    }
+    /* Hide filter-form by default */
+    #filter-form {
+      display: none;
+      margin-bottom: 1rem;
+    }
+    /* No-match message styling */
+    #vendor-no-match, #filter-no-match {
+      text-align: center;
+      color: #777;
+      font-style: italic;
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER + NAV (fixed by CSS) -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <i class="fa fa-cutlery"></i>
+        <span>Local Eats</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-submenu">
+            <a href="services.html">Services <i class="fa fa-chevron-down"></i></a>
+            <ul class="submenu">
+              <li><a href="events.html">Events</a></li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="bar.html">Bar</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Tour Bookings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <!-- Background video -->
+      <video class="hero-video"
+             autoplay
+             muted
+             loop
+             playsinline
+             poster="assets/video/promo.jpg">
+        <source src="assets/video/promo.mp4" type="video/mp4">
+        Your browser doesn’t support embedded videos.
+      </video>
+
+      <div class="hero-content">
+        <h1>Discover Your Next Local Favorite</h1>
+        <p>Browse, review &amp; book community restaurants near you.</p>
+        <a href="#search" class="btn">Get Started</a>
+      </div>
+    </section>
+
+    <div id="search" class="search-bar container">
+      <div class="search-container">
+        <input
+          id="vendor-search"
+          type="search"
+          class="vendor-search-input"
+          placeholder="Search vendors by name…"
+        >
+        <button type="button" id="toggle-filters">Show Filters</button>
+      </div>
+
+      <form id="filter-form" class="filter-form">
+        <!-- Cuisine -->
+        <div class="form-group">
+          <label for="cuisine">Cuisine</label>
+          <select id="cuisine" name="cuisine">
+            <option value="">All</option>
+            <option value="american">American</option>
+            <option value="vegan">Vegan</option>
+            <option value="japanese">Japanese</option>
+            <option value="indian">Indian</option>
+          </select>
+        </div>
+        <!-- Location -->
+        <div class="form-group">
+          <label for="location">Location</label>
+          <select id="location" name="location">
+            <option value="">Any</option>
+            <option value="downtown">Downtown</option>
+            <option value="uptown">Uptown</option>
+          </select>
+        </div>
+        <!-- Price -->
+        <div class="form-group">
+          <label for="price">Price</label>
+          <select id="price" name="price">
+            <option value="">All</option>
+            <option value="$">$100</option>
+            <option value="$$">$500</option>
+            <option value="$$$">$1000</option>
+          </select>
+        </div>
+        <!-- Dietary -->
+        <div class="form-group">
+          <label for="dietary">Dietary</label>
+          <select id="dietary" name="dietary">
+            <option value="">None</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="gluten-free">Gluten-Free</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">Filter</button>
+      </form>
+
+      <p id="vendor-no-match">No matching vendors found.</p>
+      <p id="filter-no-match">No matching vendors.</p>
+    </div>
+
+    <section id="featured-vendors" class="container">
+      <h2>Featured Vendors</h2>
+      <div class="vendor-grid">
+        <article class="vendor-card"
+                 data-name="the greasy spoon"
+                 data-cuisine="american"
+                 data-location="downtown"
+                 data-price="$"
+                 data-dietary="">
+          <a href="about.html?restaurant=the-greasy-spoon">
+            <!-- the following images were downloaded from the respective restaurant's instagram profile photos-->
+            <img src="assets/images/spoon1.jpg" alt="The Greasy Spoon">
+            <div class="vendor-info">
+              <h3>The Greasy Spoon</h3>
+              <p>Classic diner fare, all-day breakfast & comfort food.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="vendor-card"
+                 data-name="vegan delights"
+                 data-cuisine="vegan"
+                 data-location="uptown"
+                 data-price="$$"
+                 data-dietary="vegan">
+          <a href="about.html?restaurant=vegan-delights">
+            <img src="assets/images/veg1.png" alt="Vegan Delights">
+            <div class="vendor-info">
+              <h3>Vegan Delights</h3>
+              <p>Plant-based dishes that impress even non-vegans.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="vendor-card"
+                 data-name="sushi central"
+                 data-cuisine="japanese"
+                 data-location="downtown"
+                 data-price="$$$"
+                 data-dietary="">
+          <a href="about.html?restaurant=sushi-central">
+            <img src="assets/images/sushi1.png" alt="Sushi Central">
+            <div class="vendor-info">
+              <h3>Sushi Central</h3>
+              <p>Fresh sushi rolls and sashimi bowls made daily.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="vendor-card"
+                 data-name="curry corner"
+                 data-cuisine="indian"
+                 data-location="uptown"
+                 data-price="$$"
+                 data-dietary="">
+          <a href="about.html?restaurant=curry-corner">
+            <img src="assets/images/curry1.png" alt="Curry Corner">
+            <div class="vendor-info">
+              <h3>Curry Corner</h3>
+              <p>Spicy Indian and Thai curries served with warm naan.</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="icon"><i class="fa fa-search"></i></div>
+          <h3>Browse</h3>
+          <p>Use our search and filters to find restaurants by cuisine, price, location, and dietary needs.</p>
+        </div>
+        <div class="step">
+          <div class="icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          <h3>Review</h3>
+          <p>Read verified reviews or leave your own to help the community choose great spots.</p>
+        </div>
+        <div class="step">
+          <div class="icon"><i class="fa fa-calendar-check-o"></i></div>
+          <h3>Book</h3>
+          <p>Reserve a table or place an order directly with your favorite local vendors.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials container">
+      <h2>What Our Community Says</h2>
+      <div class="testimonial-grid">
+        <!-- the following images were downloaded from the user's instagram account posts-->
+        <div class="testimonial-card">
+          <img src="assets/images/user1.jpg" alt="Alex" class="avatar">
+          <h3>Alex J.</h3>
+          <p class="stars">★★★★★</p>
+          <blockquote>
+            “Local Eats helped me discover the best hidden gem taco stand—fast reservations and honest reviews!”
+          </blockquote>
+        </div>
+        <div class="testimonial-card">
+          <img src="assets/images/user2.jpg" alt="Maria" class="avatar">
+          <h3>Maria L.</h3>
+          <p class="stars">★★★★☆</p>
+          <blockquote>
+            “I love the filtering options—it’s so easy to find vegan-friendly spots in my neighborhood.”  
+          </blockquote>
+        </div>
+        <div class="testimonial-card">
+          <img src="assets/images/user3.jpg" alt="Devin" class="avatar">
+          <h3>Devin S.</h3>
+          <p class="stars">★★★★★</p>
+          <blockquote>
+            “Booked a last-minute table at a local bistro in seconds. Definitely my go-to foodie app!”  
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Local Eats. All rights reserved.</p>
+      <div class="social">
+        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+    <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+          <img src="assets/images/htmlval.png" alt="Valid HTML5 and CSS" width="150" height="50">
+        </a>
+      </p>
+    <p>
+      <a href="https://jigsaw.w3.org/css-validator/check/referer">
+          <img style="border:0;width:88px;height:31px"
+              src="https://jigsaw.w3.org/css-validator/images/vcss"
+              alt="Valid CSS!" >
+      </a>
+    </p>
+  </footer>
+  
+
+  <script>
+    // Nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav       = document.querySelector('.site-nav > ul');
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('nav-open');
+    });
+
+    // Toggle filter form visibility
+    const toggleBtn   = document.getElementById('toggle-filters');
+    const filterForm  = document.getElementById('filter-form');
+    toggleBtn.addEventListener('click', () => {
+      const isVisible = filterForm.style.display === 'block';
+      filterForm.style.display = isVisible ? 'none' : 'block';
+      toggleBtn.textContent = isVisible ? 'Show Filters' : 'Hide Filters';
+      // Hide no-match messages when toggling
+      document.getElementById('filter-no-match').style.display = 'none';
+    });
+
+    // Live vendor-name search
+    const vendorInput = document.getElementById('vendor-search');
+    const vendorCards = document.querySelectorAll('.vendor-card');
+    const vendorNoMatch = document.getElementById('vendor-no-match');
+    vendorInput.addEventListener('input', () => {
+      const q = vendorInput.value.trim().toLowerCase();
+      let anyVisible = false;
+      vendorCards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const match = name.includes(q) || q === '';
+        card.style.display = match ? '' : 'none';
+        if (match) anyVisible = true;
+      });
+      vendorNoMatch.style.display = anyVisible || q === '' ? 'none' : 'block';
+    });
+
+    // Filter-form functionality
+    const filterNoMatch = document.getElementById('filter-no-match');
+    filterForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const cuisine  = document.getElementById('cuisine').value;
+      const location = document.getElementById('location').value;
+      const price    = document.getElementById('price').value;
+      const dietary  = document.getElementById('dietary').value;
+      let anyVisible = false;
+
+      vendorCards.forEach(card => {
+        const matchesCuisine  = !cuisine || card.dataset.cuisine === cuisine;
+        const matchesLocation = !location || card.dataset.location === location;
+        const matchesPrice    = !price || card.dataset.price === price;
+        const matchesDietary  = !dietary || card.dataset.dietary === dietary;
+        const show = matchesCuisine && matchesLocation && matchesPrice && matchesDietary;
+        card.style.display = show ? '' : 'none';
+        if (show) anyVisible = true;
+      });
+
+      filterNoMatch.style.display = anyVisible ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>

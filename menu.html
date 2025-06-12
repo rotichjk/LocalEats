@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Menu – Local Eats</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome v4 -->
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><i class="fa fa-cutlery"></i>Local Eats</a>
+      <button class="nav-toggle" aria-label="Toggle menu"><i class="fa fa-bars"></i></button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-submenu">
+            <a href="services.html">Services <i class="fa fa-chevron-down"></i></a>
+            <ul class="submenu">
+              <li><a href="events.html">Events</a></li>
+              <li><a href="games.html">Games</a></li>
+              <li><a href="sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="bar.html">Bar</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Tour Bookings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="services-hero" style="background:url('assets/images/menu-hero.jpg')center/cover no-repeat;">
+      <div class="container">
+        <h1>Our Full Menu</h1>
+        <p>Explore starters, mains, desserts & more from all our vendors.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="menu-filters">
+        <button class="menu-filter active" data-cat="all">All</button>
+        <button class="menu-filter" data-cat="starters">Starters</button>
+        <button class="menu-filter" data-cat="mains">Mains</button>
+        <button class="menu-filter" data-cat="desserts">Desserts</button>
+        <button class="menu-filter" data-cat="sides">Sides</button>
+      </div>
+
+      <div class="menu-search">
+        <input id="menu-search" type="text" placeholder="Search menu…">
+      </div>
+
+      <p id="no-match" class="no-match" hidden>No matching items.</p>
+
+      <div class="menu-grid">
+        <article class="menu-item" data-cat="starters" data-name="Bruschetta">
+          <!-- the following images were downloaded from pinterest images corresponding to their names-->
+          <img src="assets/images/menu-bruschetta.png" alt="Bruschetta">
+          <h3>Bruschetta</h3>
+          <p class="menu-desc">Grilled bread, tomato, basil & olive oil.</p>
+          <p class="menu-price">$8</p>
+        </article>
+        <article class="menu-item" data-cat="mains" data-name="Grilled Salmon">
+  <img src="assets/images/menu-salmon.png" alt="Grilled Salmon">
+  <h3>Grilled Salmon</h3>
+  <p class="menu-desc">Pan-seared salmon with lemon-butter sauce and seasonal veggies.</p>
+  <p class="menu-price">$18</p>
+</article>
+
+<article class="menu-item" data-cat="desserts" data-name="Chocolate Lava Cake">
+  <img src="assets/images/menu-lava-cake.png" alt="Chocolate Lava Cake">
+  <h3>Chocolate Lava Cake</h3>
+  <p class="menu-desc">Warm molten chocolate cake served with vanilla ice cream.</p>
+  <p class="menu-price">$9</p>
+</article>
+
+<article class="menu-item" data-cat="sides" data-name="Truffle Fries">
+  <img src="assets/images/menu-truffle-fries.png" alt="Truffle Fries">
+  <h3>Truffle Fries</h3>
+  <p class="menu-desc">Crispy fries tossed in truffle oil and Parmesan.</p>
+  <p class="menu-price">$7</p>
+</article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Local Eats. All rights reserved.</p>
+      <div class="social">
+        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+    <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+          <img src="assets/images/htmlval.png" alt="Valid HTML5 and CSS" width="150" height="50">
+        </a>
+      </p>
+  </footer>
+
+  <script>
+    // nav toggle
+    document.querySelector('.nav-toggle').onclick = () =>
+      document.querySelector('.site-nav > ul').classList.toggle('nav-open');
+
+    const filters = document.querySelectorAll('.menu-filter');
+    const items   = document.querySelectorAll('.menu-item');
+    const search  = document.getElementById('menu-search');
+    const noMatch = document.getElementById('no-match');
+
+    function updateDisplay() {
+      const q = search.value.trim().toLowerCase();
+      let any = false;
+      items.forEach(it => {
+        const name = it.dataset.name.toLowerCase();
+        const cat  = it.dataset.cat;
+        const catMatch = document.querySelector('.menu-filter.active').dataset.cat;
+        const okCat = catMatch==='all' || cat===catMatch;
+        const okName = name.includes(q);
+        if (okCat && okName) {
+          it.style.display = '';
+          any = true;
+        } else {
+          it.style.display = 'none';
+        }
+      });
+      noMatch.hidden = any || q==='';
+    }
+
+    filters.forEach(btn => btn.onclick = () => {
+      filters.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      updateDisplay();
+    });
+
+    search.oninput = updateDisplay;
+  </script>
+</body>
+</html>
