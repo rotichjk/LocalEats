@@ -52,6 +52,45 @@ body {
   top: 1rem;
   right: 1rem;
 }
+/* Inline additions for search & toggle layout */
+.search-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.vendor-search-input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+#toggle-filters {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#toggle-filters:hover {
+  background: #e0e0e0;
+}
+/* Hide filter-form by default */
+#filter-form {
+  display: none;
+  margin-bottom: 1rem;
+}
+/* No-match message styling */
+#vendor-no-match, #filter-no-match {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  margin-top: 1rem;
+  display: none;
+}
 .site-nav > ul {
   list-style: none;
   display: none;
